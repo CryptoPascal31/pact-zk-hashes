@@ -30,8 +30,6 @@ def gen_constants():
         yield int.from_bytes(x, "big") % FIELD_MODULUS
     yield 0
 
-#output = HEADER  + (",\n" + " "*len(HEADER)).join(map("{:d}".format, gen_constants())) + FOOTER
-
 
 script = Path(__file__)
 current_dir = script.resolve().parent
@@ -43,7 +41,6 @@ csts = list(gen_constants())
 csts_str = "".join("\n   " + x for x in json.dumps(csts, indent=2).splitlines())
 
 
-#print(data)
 tmpl = Template(TEMPLATE)
 output = tmpl.substitute(script=script.name, modulus=str(FIELD_MODULUS), seed=SEED, cst=csts_str)
 
