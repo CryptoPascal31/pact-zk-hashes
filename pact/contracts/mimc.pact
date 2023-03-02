@@ -1,5 +1,8 @@
 ;SPDX-License-Identifier: MIT
 (module mimc-v1 GOV
+  "Pact implementation of the MiMC hash algorithm \
+  \ Github: https://github.com/CryptoPascal31/pact-zk-hashes "
+
   (defconst VERSION:string "0.9")
   (defcap GOV () false)
 
