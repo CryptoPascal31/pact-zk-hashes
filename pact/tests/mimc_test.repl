@@ -1,9 +1,8 @@
 ;SPDX-License-Identifier: MIT
+(load "init-util.repl")
+
 (begin-tx)
-(load "../pact-util-lib/pact/contracts/util-lists.pact")
-
 (load "../contracts/mimc.pact")
-
 (commit-tx)
 
 (begin-tx)

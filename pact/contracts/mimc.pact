@@ -3,7 +3,7 @@
   (defconst VERSION:string "0.9")
   (defcap GOV () false)
 
-  (use util-lists [append-last last enforce-not-empty])
+  (use free.util-lists [append-last last enforce-not-empty])
 
   ; Modulus to define the field (same as BN128)
   (defconst FIELD-MODULUS:integer 21888242871839275222246405745257275088548364400416034343698204186575808495617)

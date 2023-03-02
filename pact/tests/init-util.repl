@@ -1,0 +1,11 @@
+(begin-tx)
+(module G GOV
+  (defcap GOV () true)
+  (defconst GUARD_SUCCESS (create-user-guard (success)))
+  (defun success () true)
+)
+(define-namespace 'free GUARD_SUCCESS GUARD_SUCCESS)
+
+(namespace 'free)
+(load "../pact-util-lib/pact/contracts/util-lists.pact")
+(commit-tx)

@@ -1,20 +1,24 @@
 ;SPDX-License-Identifier: MIT
+(load "init-util.repl")
+
+; Init more utils libs (random is needed for the testst)
 (begin-tx)
-(load "../pact-util-lib/pact/contracts/util-lists.pact")
+(namespace 'free)
 (load "../pact-util-lib/pact/contracts/util-math.pact")
 (load "../pact-util-lib/pact/contracts/util-strings.pact")
 (load "../pact-util-lib/pact/contracts/util-random.pact")
 (create-table state-table)
 (env-hash (hash "Seed1"))
 (reset-state)
+(commit-tx)
 
+(begin-tx)
 (load "../contracts/mimc.pact")
-
 (commit-tx)
 
 (begin-tx)
 (use mimc-v1)
-(use util-random)
+(use free.util-random)
 
 (env-gasmodel "table")
 (env-gaslimit 100000000)
