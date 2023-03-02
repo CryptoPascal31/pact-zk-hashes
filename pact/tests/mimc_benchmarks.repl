@@ -13,6 +13,7 @@
 (commit-tx)
 
 (begin-tx)
+(load "../contracts/mimc-constants.pact")
 (load "../contracts/mimc.pact")
 (commit-tx)
 

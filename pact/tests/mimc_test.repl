@@ -2,6 +2,7 @@
 (load "init-util.repl")
 
 (begin-tx)
+(load "../contracts/mimc-constants.pact")
 (load "../contracts/mimc.pact")
 (commit-tx)
 
