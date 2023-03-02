@@ -1,0 +1,53 @@
+;SPDX-License-Identifier: MIT
+(begin-tx)
+(load "../pact-util-lib/pact/contracts/util-lists.pact")
+(load "../pact-util-lib/pact/contracts/util-math.pact")
+(load "../pact-util-lib/pact/contracts/util-strings.pact")
+(load "../pact-util-lib/pact/contracts/util-random.pact")
+(create-table state-table)
+(env-hash (hash "Seed1"))
+(reset-state)
+
+(load "../contracts/mimc.pact")
+
+(commit-tx)
+
+(begin-tx)
+(use mimc-v1)
+(use util-random)
+
+(env-gasmodel "table")
+(env-gaslimit 100000000)
+
+(print "Single hash")
+(env-gas 0)
+(feistel-hash 53 {'L:274945154732293792784580363548970818611304339008964723447672490026510689427, 'R:274945154732293792784580363548970818611304339008964723447672490026510689427})
+(print (format "-->{}" [(env-gas)]))
+
+(print "Multihash 1->1")
+(env-gas 0)
+(feistel-multi-hash 53 [274945154732293792784580363548970818611304339008964723447672490026510689427] 1)
+(print (format "-->{}" [(env-gas)]))
+
+
+(print "Multihash 1->10")
+(env-gas 0)
+(feistel-multi-hash 53 [274945154732293792784580363548970818611304339008964723447672490026510689427] 10)
+(print (format "-->{}" [(env-gas)]))
+
+
+(print "Multihash 10->1")
+
+(let ((input-data (map (lambda (x) (random-int)) (enumerate 1 10))))
+  (env-gas 0)
+  (feistel-multi-hash 53 input-data 1)
+  (print (format "-->{}" [(env-gas)]))
+)
+
+(print "Multihash 10->10")
+
+(let ((input-data (map (lambda (x) (random-int)) (enumerate 1 10))))
+  (env-gas 0)
+  (feistel-multi-hash 53 input-data 10)
+  (print (format "-->{}" [(env-gas)]))
+)
