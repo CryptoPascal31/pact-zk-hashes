@@ -47,7 +47,7 @@ Gas consumption (pact 4.6.0):
 
 ```
 (defun feistel-multi-hash:[integer] (key:integer inputs:[integer] n-outputs:integer)
-````
+```
 
 * `key`: key
 * `inputs`: input list of integers
