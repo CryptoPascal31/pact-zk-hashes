@@ -68,3 +68,40 @@ Gas consumption (pact 4.6.0):
 | Circomlib        | MiMCSponge(nInputs, 220, nOutputs)                                            |
 | CircomlibJS      | MIMCSponge.multiHash()                                                        |
 | ZoKrates Stalib  | mimcSponge<nInputs, nOutputs>(field[nInputs] ins, field k) -> field[nOutputs] |
+
+---
+
+---
+
+## POSEIDON
+Pact implementation of the Poseidon hash for Kadena:
+
+https://www.poseidon-hash.info/
+
+https://github.com/iden3/circomlib/blob/master/circuits/poseidon.circom
+
+https://github.com/iden3/circomlibjs/blob/main/src/poseidon_reference.js
+
+https://github.com/Zokrates/ZoKrates/blob/develop/zokrates_stdlib/stdlib/hashes/poseidon/poseidon.zok
+
+Constants are taken from the Circolib project.
+
+### API
+
+```
+(defun poseidon-hash:integer (in:[integer])
+```
+* `inputs`: input list of integers
+
+Returns the hash result as an integer.
+
+Gas consumption: TBD
+
+
+**Equivalence:**
+
+| Library          | Function                                                                      |
+| ---------------- | ------------------------------------------------------------------------------|
+| Circomlib        | Poseidon(nInputs)                                                             |
+| CircomlibJS      | buildPoseidon()(inputs, 0 1)                                                  |
+| ZoKrates Stalib  | poseidon<N>(field[N] inputs) -> field                                         |
