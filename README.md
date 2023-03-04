@@ -95,7 +95,12 @@ Constants are taken from the Circolib project.
 
 Returns the hash result as an integer.
 
-Gas consumption: TBD
+Gas consumption (pact 4.6.0):
+ - 1 input/1 output: 20,242
+ - 1 input/2 outputs: 36,075
+ - 1 input/3 outputs: 56,465
+ - 1 input/4 outputs: 88,226
+ - 1 input/5 outputs: 122,700
 
 
 **Equivalence:**
