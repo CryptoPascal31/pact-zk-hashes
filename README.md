@@ -67,7 +67,7 @@ Gas consumption (pact 4.6.0):
 | ---------------- | ------------------------------------------------------------------------------|
 | Circomlib        | MiMCSponge(nInputs, 220, nOutputs)                                            |
 | CircomlibJS      | MIMCSponge.multiHash()                                                        |
-| ZoKrates Stalib  | mimcSponge<nInputs, nOutputs>(field[nInputs] ins, field k) -> field[nOutputs] |
+| ZoKrates Stdlib  | mimcSponge<nInputs, nOutputs>(field[nInputs] ins, field k) -> field[nOutputs] |
 
 ---
 
@@ -97,10 +97,10 @@ Returns the hash result as an integer.
 
 Gas consumption (pact 4.6.0):
  - 1 input/1 output: 20,242
- - 1 input/2 outputs: 36,075
- - 1 input/3 outputs: 56,465
- - 1 input/4 outputs: 88,226
- - 1 input/5 outputs: 122,700
+ - 2 inputs/1 output: 36,075
+ - 3 inputs/1 output: 56,465
+ - 4 inputs/1 output: 88,226
+ - 5 inputs/1 output: 122,700
 
 
 **Equivalence:**
@@ -109,4 +109,4 @@ Gas consumption (pact 4.6.0):
 | ---------------- | ------------------------------------------------------------------------------|
 | Circomlib        | Poseidon(nInputs)                                                             |
 | CircomlibJS      | buildPoseidon()(inputs, 0 1)                                                  |
-| ZoKrates Stalib  | poseidon<N>(field[N] inputs) -> field                                         |
+| ZoKrates Stdlib  | poseidon<N>(field[N] inputs) -> field                                         |
