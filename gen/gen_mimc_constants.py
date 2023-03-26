@@ -15,7 +15,8 @@ TEMPLATE = """(module mimc-constants-v1 GOV
   ; Field Modulus = $modulus
   ; Seed = "$seed"
 
-  (defcap GOV () true)
+  (defcap GOV ()
+    (enforce false "Non-upgradable module"))
 
   (defconst MIMC-CONST:[integer] $cst )
 )

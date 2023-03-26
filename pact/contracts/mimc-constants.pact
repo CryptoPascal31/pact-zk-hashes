@@ -4,7 +4,8 @@
   ; Field Modulus = 21888242871839275222246405745257275088548364400416034343698204186575808495617
   ; Seed = "mimcsponge"
 
-  (defcap GOV () true)
+  (defcap GOV ()
+    (enforce false "Non-upgradable module"))
 
   (defconst MIMC-CONST:[integer] 
    [

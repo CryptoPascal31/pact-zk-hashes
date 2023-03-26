@@ -4,7 +4,8 @@
   \ Github: https://github.com/CryptoPascal31/pact-zk-hashes "
 
   (defconst VERSION:string "1.0")
-  (defcap GOV () false)
+  (defcap GOV ()
+    (enforce false "Non-upgradable module"))
 
   (use free.util-lists [append-last last enforce-not-empty])
 
