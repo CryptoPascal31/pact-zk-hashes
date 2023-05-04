@@ -41,6 +41,14 @@
 (print (format "-->{}" [(env-gas)]))
 
 
+(print "Multihash 2->1")
+
+(let ((input-data (map (lambda (x) (random-int)) (enumerate 1 2))))
+  (env-gas 0)
+  (feistel-multi-hash 53 input-data 1)
+  (print (format "-->{}" [(env-gas)]))
+)
+
 (print "Multihash 10->1")
 
 (let ((input-data (map (lambda (x) (random-int)) (enumerate 1 10))))
