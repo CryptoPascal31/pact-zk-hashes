@@ -42,10 +42,11 @@
   ;;; --------------------------------------------------------------------------
   ;;; -------------------------- S-BOX LAYER -----------------------------------
   (defun s-box:integer (x:integer)
-    "S box function: modular x => x^5 "
-    (let* ((x2 (*mod x x))
-           (x4 (*mod x2 x2)))
-      (*mod x4 x))
+    "S box function: modular x => x^5"
+    ; Not using (*mod) and inlining here save roughly 300 gas per hash
+    (let* ((x2 (mod (* x x) FIELD-MODULUS))
+           (x4 (mod (* x2 x2) FIELD-MODULUS)))
+      (mod (* x4 x) FIELD-MODULUS))
   )
 
   (defun s-box-layer-full:[integer] (in:[integer])
@@ -54,7 +55,11 @@
 
   (defun s-box-layer-partial:[integer] (in:[integer])
     "S-Box layer of a partial round: apply s-box on the first element only"
-    (replace-first in (s-box (first in))))
+    ;(replace-first in (s-box (first in))))
+    ; => Optimized to do less functions calls and less check
+    ;    save roughly 750 gas per hash
+    (+ [(s-box (at 0 in))]
+       (drop 1 in)))
 
 
   ;;; --------------------------------------------------------------------------
