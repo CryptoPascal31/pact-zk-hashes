@@ -4,6 +4,7 @@
 ; Init more utils libs (random is needed for the testst)
 (begin-tx)
 (namespace 'free)
+(load "../pact-util-lib/pact/contracts/util-chain-data.pact")
 (load "../pact-util-lib/pact/contracts/util-math.pact")
 (load "../pact-util-lib/pact/contracts/util-strings.pact")
 (load "../pact-util-lib/pact/contracts/util-random.pact")
