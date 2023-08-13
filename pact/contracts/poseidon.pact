@@ -6,8 +6,6 @@
   (defcap GOV ()
     (enforce false "Non-upgradable module"))
 
-  (use free.util-lists [first replace-first])
-
   (use poseidon-constants-v1)
 
   ; Modulus to define the field (same as BN128)
