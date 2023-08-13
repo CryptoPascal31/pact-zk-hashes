@@ -2,7 +2,7 @@
 (module poseidon-hash-v1 GOV
   "Pact implementation of the Poseidon hash algorithm \
   \ Github: https://github.com/CryptoPascal31/pact-zk-hashes "
-  (defconst VERSION "1.0")
+  (defconst VERSION "1.1")
   (defcap GOV ()
     (enforce false "Non-upgradable module"))
 
