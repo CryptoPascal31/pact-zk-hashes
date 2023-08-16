@@ -4,6 +4,10 @@
 (begin-tx)
 (load "../contracts/poseidon-constants.pact")
 (load "../contracts/poseidon.pact")
+
+(print (format "poseidon-constants: {}\nposeidon-hash: {}" (map (compose (describe-module) (at 'hash))
+                                                           ["poseidon-constants-v1","poseidon-hash-v1" ])))
+
 (commit-tx)
 
 (begin-tx)

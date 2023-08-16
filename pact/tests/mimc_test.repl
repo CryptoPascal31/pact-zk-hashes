@@ -4,6 +4,10 @@
 (begin-tx)
 (load "../contracts/mimc-constants.pact")
 (load "../contracts/mimc.pact")
+
+(print (format "mimc-constants: {}\nmimc: {}" (map (compose (describe-module) (at 'hash))
+                                              ["mimc-constants-v1","mimc-v1" ])))
+
 (commit-tx)
 
 (begin-tx)
