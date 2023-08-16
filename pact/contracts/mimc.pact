@@ -10,7 +10,7 @@
   (use free.util-lists [append-last last enforce-not-empty])
 
   ; Load generated constants
-  (use mimc-constants-v1)
+  (use mimc-constants-v1 "GkRwic14d-6K6F8dL-PzA1E1erA0pPm3wYWPYNC8zoU")
 
   ; Modulus to define the field (same as BN128)
   (defconst FIELD-MODULUS:integer 21888242871839275222246405745257275088548364400416034343698204186575808495617)

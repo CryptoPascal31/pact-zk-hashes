@@ -6,7 +6,7 @@
   (defcap GOV ()
     (enforce false "Non-upgradable module"))
 
-  (use poseidon-constants-v1)
+  (use poseidon-constants-v1 "6UzsneNHuw7BP-on5CSmPWIsnMt2les0PkkUGpk3Fzs")
 
   ; Modulus to define the field (same as BN128)
   (defconst FIELD-MODULUS:integer 21888242871839275222246405745257275088548364400416034343698204186575808495617)
