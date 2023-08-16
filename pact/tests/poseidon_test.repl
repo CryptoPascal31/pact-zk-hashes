@@ -6,12 +6,12 @@
 (load "../contracts/poseidon.pact")
 
 (print (format "poseidon-constants: {}\nposeidon-hash: {}" (map (compose (describe-module) (at 'hash))
-                                                           ["poseidon-constants-v1","poseidon-hash-v1" ])))
+                                                           ["poseidon-constants-v1","poseidon-hash-v1-1" ])))
 
 (commit-tx)
 
 (begin-tx)
-(use poseidon-hash-v1)
+(use poseidon-hash-v1-1)
 
 ; Size 0
 (expect-failure "Hash of []" "Unsupported" (poseidon-hash []))

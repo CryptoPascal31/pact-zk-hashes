@@ -19,7 +19,7 @@
 (commit-tx)
 
 (begin-tx)
-(use mimc-v1)
+(use mimc-v1-1)
 (use free.util-random)
 
 (env-gasmodel "table")

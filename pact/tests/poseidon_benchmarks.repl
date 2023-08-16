@@ -7,7 +7,7 @@
 (commit-tx)
 
 (begin-tx)
-(use poseidon-hash-v1)
+(use poseidon-hash-v1-1)
 
 (env-gasmodel "table")
 (env-gaslimit 100000000)

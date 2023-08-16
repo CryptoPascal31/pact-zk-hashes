@@ -6,12 +6,12 @@
 (load "../contracts/mimc.pact")
 
 (print (format "mimc-constants: {}\nmimc: {}" (map (compose (describe-module) (at 'hash))
-                                              ["mimc-constants-v1","mimc-v1" ])))
+                                              ["mimc-constants-v1","mimc-v1-1" ])))
 
 (commit-tx)
 
 (begin-tx)
-(use mimc-v1)
+(use mimc-v1-1)
 
 (expect "Single Hash Test 1: {1,2}" {'L:18444058245820418255538785847032978363886102372504864086197416499869253008979,
                                      'R:2646733164649743153031645792459389637917704265581895142760676293265176296759}
